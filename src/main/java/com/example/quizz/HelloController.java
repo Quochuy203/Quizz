@@ -1,14 +1,26 @@
 package com.example.quizz;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+import javafx.scene.control.Button;
+import javafx.application.Platform;
 
 public class HelloController {
     @FXML
-    private Label welcomeText;
+    private Button btnNewGame;
 
     @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+    private Button btnLoad;
+
+    @FXML
+    private Button btnQuit;
+
+    @FXML
+    protected void onNewGameClick() {
+        System.out.println("Button Nouvelle Partie a été tapé!");
+    }
+    @FXML
+    protected void onQuitClick() {
+        System.out.println("En cours quitté ...");
+        Platform.exit();
     }
 }
