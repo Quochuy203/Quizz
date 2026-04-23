@@ -33,3 +33,13 @@
     -fx-text-fill: #2c3e50;
     -fx-cursor: hand;
 }
+.root {
+    -fx-background-color: transparent;
+}
+
+.bg-image {
+    -fx-background-image: url("example/Quizz_fond.jpg");
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+    -fx-background-repeat: no-repeat;
+}

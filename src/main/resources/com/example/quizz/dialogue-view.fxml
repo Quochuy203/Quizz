@@ -18,7 +18,7 @@
                  fitHeight="180.0" fitWidth="180.0"
                  layoutX="490.0" layoutY="20.0"
                  pickOnBounds="true" preserveRatio="true">
-         <image><Image url="@example/Quizz_avt.jpg"/></image>
+         <image><Image url="@example/Quizz_logo.jpg"/></image>
       </ImageView>
 
       <AnchorPane layoutX="20.0" layoutY="350.0"

@@ -154,7 +154,6 @@ Projet personnel - Libre d'utilisation
 ## 🎯 Améliorations Possibles
 
 - [ ] Ajouter des niveaux de difficulté
-- [ ] Implémenter un système de chronomètre
 - [ ] Ajouter des power-ups
 - [ ] Créer un classement
 - [ ] Supporter plusieurs langues

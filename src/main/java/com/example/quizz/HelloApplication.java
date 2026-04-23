@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.scene.Parent;
 import java.io.IOException;
 
 public class HelloApplication extends Application {
@@ -15,13 +16,15 @@ public class HelloApplication extends Application {
         primaryStage = stage;
 
         FXMLLoader fxmlLoader = new FXMLLoader(
-                HelloApplication.class.getResource("hello-view.fxml")
+                HelloApplication.class.getResource("/com/example/quizz/hello-view.fxml")
         );
 
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Quizz: Escape Game");
         stage.setScene(scene);
         stage.setResizable(true);
+        stage.setMinWidth(400);
+        stage.setMinHeight(500);
         stage.show();
     }
 
@@ -29,7 +32,8 @@ public class HelloApplication extends Application {
         FXMLLoader loader = new FXMLLoader(
                 HelloApplication.class.getResource("/com/example/quizz/" + fxmlPath)
         );
-        Scene scene = new Scene(loader.load());
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.sizeToScene();
     }

@@ -27,6 +27,10 @@
                           -fx-font-weight: bold;"
                    text="0 / 5"/>
 
+            <Label fx:id="lblTimer"
+                   style="-fx-text-fill: #ffd700; -fx-font-size: 18px; -fx-font-weight: bold;"
+                   text="⏱ 15s"/>
+
             <Label fx:id="lblQuestion"
                    prefWidth="520.0"
                    style="-fx-text-fill: white; -fx-font-size: 16px;
