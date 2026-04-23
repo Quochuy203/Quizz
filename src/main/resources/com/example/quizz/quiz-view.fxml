@@ -1,14 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="CONTROLLER_NAME"
-            prefHeight="400.0" prefWidth="600.0">
+<AnchorPane prefHeight="550.0" prefWidth="700.0"
+            stylesheets="@style.css"
+            xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.quizz.QuizController">
+    <children>
+        <ImageView fitHeight="550.0" fitWidth="700.0"
+                   pickOnBounds="true" preserveRatio="false">
+            <image><Image url="@example/Quizz_fond.jpg"/></image>
+        </ImageView>
 
+        <AnchorPane layoutX="0" layoutY="0"
+                    prefWidth="700" prefHeight="550"
+                    style="-fx-background-color: rgba(0,0,0,0.55);"/>
+
+        <VBox layoutX="80.0" layoutY="30.0"
+              prefWidth="540.0" spacing="20.0"
+              alignment="CENTER">
+
+            <Label fx:id="lblScore"
+                   style="-fx-text-fill: #ffd700; -fx-font-size: 22px;
+                          -fx-font-weight: bold;"
+                   text="0 / 5"/>
+
+            <Label fx:id="lblQuestion"
+                   prefWidth="520.0"
+                   style="-fx-text-fill: white; -fx-font-size: 16px;
+                          -fx-background-color: rgba(0,0,0,0.6);
+                          -fx-padding: 15; -fx-background-radius: 8;"
+                   wrapText="true" text="Chargement..."/>
+
+            <HBox spacing="15.0" alignment="CENTER">
+                <Button fx:id="btn1" onAction="#onAnswer1"
+                        prefWidth="240" styleClass="answer-button" text="A"/>
+                <Button fx:id="btn2" onAction="#onAnswer2"
+                        prefWidth="240" styleClass="answer-button" text="B"/>
+            </HBox>
+            <HBox spacing="15.0" alignment="CENTER">
+                <Button fx:id="btn3" onAction="#onAnswer3"
+                        prefWidth="240" styleClass="answer-button" text="C"/>
+                <Button fx:id="btn4" onAction="#onAnswer4"
+                        prefWidth="240" styleClass="answer-button" text="D"/>
+            </HBox>
+
+            <Label fx:id="lblFeedback"
+                   style="-fx-font-size: 15px; -fx-font-weight: bold;"
+                   text=""/>
+
+            <Button fx:id="btnNext" onAction="#onNext"
+                    styleClass="game-button"
+                    text="Question suivante ▶"/>
+        </VBox>
+    </children>
 </AnchorPane>
