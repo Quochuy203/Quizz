@@ -16,7 +16,7 @@ L'histoire : Une bombe a été placée quelque part en ville. Tu dois résoudre 
 
 - ✅ Menu principal avec options "Nouvelle partie", "Reprendre", "Quitter"
 - ✅ Dialogues d'introduction du Chef avec effet typewriter
-- ✅ Quiz avec questions en anglais (traduites depuis une API)
+- ✅ Quiz avec questions en français (via QuizzAPI)
 - ✅ Système de feedback immédiat (bonne/mauvaise réponse)
 - ✅ Sauvegarde automatique de la progression
 - ✅ Écran de victoire avec score final
@@ -54,7 +54,7 @@ mvn javafx:run
 
 1. **Écran d'accueil** : Choisis "Nouvelle partie" pour commencer
 2. **Dialogues** : Lis les dialogues du Chef en appuyant sur "Suivant" ou ESPACE
-3. **Quiz** : Réponds à 5 questions de quiz (cibles aléatoires depuis opentdb.com)
+3. **Quiz** : Réponds à 5 questions de quiz (sources aléatoires depuis quizzapi.jomoreschi.fr)
 4. **Scoring** : 
    - ✅ Bonne réponse = +1 point (vert)
    - ❌ Mauvaise réponse = pas de point (rouge)
@@ -95,7 +95,7 @@ Quizz/
 - **JavaFX 21** : Interface graphique
 - **Maven** : Gestion des dépendances
 - **Gson** : Parsing JSON
-- **OpenTDB API** : Questions de quiz aléatoires
+- **QuizzAPI** : Questions de quiz aléatoires en français
 - **Java 17** : Langage de programmation
 
 ## 📚 Dépendances Principales
@@ -142,7 +142,7 @@ Modifie `SCORE_TO_WIN` dans [QuizController.java](src/main/java/com/example/quiz
 
 **Les questions ne s'affichent pas :**
 - Vérifiez votre connexion Internet
-- L'API OpenTDB peut être temporairement indisponible
+- L'API QuizzAPI peut être temporairement indisponible
 
 **Les images manquent :**
 - Vérifiez que les fichiers image sont dans `src/main/resources/com/example/quizz/example/`

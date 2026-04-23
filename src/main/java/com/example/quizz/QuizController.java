@@ -42,7 +42,7 @@ public class QuizController {
         new Thread(() -> {
             try {
                 HttpRequest request = HttpRequest.newBuilder()
-                        .uri(URI.create("https://opentdb.com/api.php?amount=1&type=multiple&language=fr"))
+                        .uri(URI.create("https://quizzapi.jomoreschi.fr/api/v2/quiz?limit=1"))
                         .GET()
                         .build();
 
@@ -50,13 +50,13 @@ public class QuizController {
                         httpClient.send(request, HttpResponse.BodyHandlers.ofString());
 
                 JsonObject json = JsonParser.parseString(response.body()).getAsJsonObject();
-                JsonObject result = json.getAsJsonArray("results").get(0).getAsJsonObject();
+                JsonObject result = json.getAsJsonArray("quizzes").get(0).getAsJsonObject();
 
-                String question = decodeHtml(result.get("question").getAsString());
-                String correct = decodeHtml(result.get("correct_answer").getAsString());
+                String question = result.get("question").getAsString();
+                String correct = result.get("answer").getAsString();
                 List<String> incorrect = new ArrayList<>();
-                for (JsonElement e : result.getAsJsonArray("incorrect_answers")) {
-                    incorrect.add(decodeHtml(e.getAsString()));
+                for (JsonElement e : result.getAsJsonArray("badAnswers")) {
+                    incorrect.add(e.getAsString());
                 }
 
                 currentQuestion = new QuizQuestion(question, correct, incorrect);
@@ -145,15 +145,5 @@ public class QuizController {
         btn2.setDisable(disabled);
         btn3.setDisable(disabled);
         btn4.setDisable(disabled);
-    }
-
-    private String decodeHtml(String text) {
-        return text.replace("&quot;", "\"")
-                .replace("&#039;", "'")
-                .replace("&amp;", "&")
-                .replace("&lt;", "<")
-                .replace("&gt;", ">")
-                .replace("&eacute;", "é")
-                .replace("&egrave;", "è");
     }
 }
