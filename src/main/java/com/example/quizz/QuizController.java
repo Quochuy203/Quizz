@@ -42,7 +42,7 @@ public class QuizController {
         new Thread(() -> {
             try {
                 HttpRequest request = HttpRequest.newBuilder()
-                        .uri(URI.create("https://opentdb.com/api.php?amount=1&type=multiple"))
+                        .uri(URI.create("https://opentdb.com/api.php?amount=1&type=multiple&language=fr"))
                         .GET()
                         .build();
 
