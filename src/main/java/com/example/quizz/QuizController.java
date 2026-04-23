@@ -100,7 +100,7 @@ public class QuizController {
             lblFeedback.setStyle("-fx-text-fill: #4CAF50;");
         } else {
             clicked.setStyle("-fx-background-color: #f44336; -fx-text-fill: white;");
-            lblFeedback.setText("❌ Wrong ! The correct answer is: " + currentQuestion.getCorrectAnswer());
+            lblFeedback.setText("❌ Incorrect ! La bonne réponse est : " + currentQuestion.getCorrectAnswer());
             lblFeedback.setStyle("-fx-text-fill: #f44336;");
             // Mettre en vert la bonne réponse
             for (Button b : List.of(btn1, btn2, btn3, btn4)) {
@@ -127,7 +127,7 @@ public class QuizController {
                 if (state == null) state = new GameState();
                 state.setCurrentStep(2);
                 SaveService.save(state);
-                HelloApplication.switchScene("dialogue-view.fxml");
+                HelloApplication.switchScene("end-view.fxml");
             } catch (IOException e) {
                 e.printStackTrace();
             }

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="461.0" prefWidth="347.0"
+            stylesheets="@style.css"
+            xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/17.0.12"
+            fx:controller="com.example.quizz.EndController">
+    <children>
+        <ImageView fitHeight="461.0" fitWidth="347.0" pickOnBounds="true" preserveRatio="false">
+            <image>
+                <Image url="@example/Quizz_fond.jpg" />
+            </image>
+        </ImageView>
+
+        <AnchorPane layoutX="0" layoutY="0"
+                    prefWidth="347" prefHeight="461"
+                    style="-fx-background-color: rgba(0,0,0,0.55);"/>
+
+        <VBox alignment="CENTER" layoutX="15.0" layoutY="50.0" prefHeight="361.0" prefWidth="317.0" spacing="20.0">
+            <children>
+                <Label fx:id="lblTitle"
+                       style="-fx-text-fill: #ffd700; -fx-font-size: 24px; -fx-font-weight: bold;"
+                       text="Victoire !"/>
+
+                <Label fx:id="lblMessage"
+                       prefWidth="300.0"
+                       style="-fx-text-fill: white; -fx-font-size: 14px;
+                              -fx-background-color: rgba(0,0,0,0.6);
+                              -fx-padding: 15; -fx-background-radius: 8;"
+                       wrapText="true"
+                       text="Tu as remporté la victoire !"/>
+
+                <Button fx:id="btnMenuPrincipal"
+                        onAction="#onMenuPrincipalClick"
+                        styleClass="game-button"
+                        text="Menu Principal"/>
+                <Button fx:id="btnQuitter"
+                        onAction="#onQuitterClick"
+                        styleClass="game-button"
+                        text="Quitter"/>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
