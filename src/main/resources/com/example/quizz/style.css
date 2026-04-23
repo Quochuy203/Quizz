@@ -1,0 +1,18 @@
+.game-button {
+    -fx-background-color: #5d7c4a;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+    -fx-border-color: #ffd700;
+    -fx-border-width: 2px;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-padding: 10 30 10 30;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+
+.game-button:hover {
+    -fx-background-color: #ffd700;
+    -fx-text-fill: #5d7c4a;
+    -fx-cursor: hand;
+}

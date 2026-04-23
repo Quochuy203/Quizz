@@ -1,22 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER" prefHeight="461.0" prefWidth="347.0" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="com.example.quizz.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-    </padding>
-   <children>
-      <ImageView fitHeight="150.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
-         <viewport>
-            <Rectangle2D />
-         </viewport>
-      </ImageView>
-      <Button fx:id="btnNewGame" mnemonicParsing="false" onAction="#onNewGameClick" text="Nouvelle partie" />
-      <Button fx:id="btnLoad" mnemonicParsing="false" text="Reprendre" />
-      <Button fx:id="btnQuit" mnemonicParsing="false" onAction="#onQuitClick" text="Quitter" />
-   </children>
-</VBox>
+<AnchorPane prefHeight="461.0" prefWidth="347.0"
+            stylesheets="@style.css"
+            xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/17.0.12"
+            fx:controller="com.example.quizz.HelloController">
+    <children>
+        <ImageView fitHeight="461.0" fitWidth="347.0" pickOnBounds="true" preserveRatio="false">
+            <image>
+                <Image url="@example/Quizz_font.jpg" />
+            </image>
+        </ImageView>
+
+        <VBox alignment="CENTER" layoutX="48.0" layoutY="100.0" prefHeight="300.0" prefWidth="250.0" spacing="20.0">
+            <children>
+                <ImageView fitHeight="100.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@example/Quizz_logo.jpg" />
+                    </image>
+                </ImageView>
+
+                <Button fx:id="btnNewGame"
+                        onAction="#onNewGameClick"
+                        styleClass="game-button"
+                        text="Nouvelle partie"/>
+                <Button fx:id="btnLoad"
+                        styleClass="game-button"
+                        text="Reprendre"/>
+                <Button fx:id="btnQuit"
+                        onAction="#onQuitClick"
+                        styleClass="game-button"
+                        text="Quitter"/>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
